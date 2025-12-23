@@ -20,7 +20,6 @@
         setState(false);
       }
     }catch(e){
-      // algunos navegadores bloquean autoplay; esto se activa por click, así que debería ir.
       console.warn("No se pudo reproducir música:", e);
     }
   }

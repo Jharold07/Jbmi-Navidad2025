@@ -1,6 +1,3 @@
-// Fuegos artificiales simples (canvas) sin dependencias.
-// No es pirotecnia 'real', pero se ve muy bien para un regalo web :)
-
 (function(){
   const canvas = document.getElementById("fx");
   const ctx = canvas.getContext("2d");

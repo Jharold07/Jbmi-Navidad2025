@@ -12,7 +12,7 @@
 
   const audioOpen = document.getElementById("audioOpen");
 
-  // Compartir
+
   const btnShare = document.getElementById("btnShare");
   const shareCard = document.getElementById("shareCard");
   const finalMsg = document.getElementById("finalMsg");
@@ -23,28 +23,25 @@
   }
 
   function openGift(){
-    // Sonido (si existe el mp3)
     try{
       audioOpen.currentTime = 0;
       audioOpen.play().catch(()=>{});
     }catch(_){}
 
-    // Animación + fuegos
     window.GiftAnimation.open(() => {
       show("final");
       window.Fireworks.start();
-      // Burst inicial más fuerte
+
       window.Fireworks.burst(window.innerWidth*0.5, window.innerHeight*0.35);
     });
   }
 
-  // Crea imagen PNG del bloque #shareCard
   async function createShareImage(){
     if(!shareCard) throw new Error("No existe #shareCard en el HTML");
 
     const canvas = await html2canvas(shareCard, {
-      backgroundColor: "#0b3d2e", // fondo sólido para que no salga transparente
-      scale: 2,                  // mejor calidad
+      backgroundColor: "#0b3d2e", 
+      scale: 2,                  
       useCORS: true
     });
 
@@ -58,7 +55,6 @@
       const blob = await createShareImage();
       const file = new File([blob], "feliz-navidad.png", { type: "image/png" });
 
-      // 1) Android moderno: share nativo con archivo
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
           title: "Feliz Navidad 🎄",
@@ -68,7 +64,6 @@
         return;
       }
 
-      // 2) Fallback: descarga + abre WhatsApp con texto
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -88,7 +83,6 @@
     }
   }
 
-  // Navegación
   btnStart.addEventListener("click", () => {
     show("gift");
     window.Fireworks.stop();
@@ -112,18 +106,15 @@
     show("gift");
   });
 
-  // Compartir
   if(btnShare){
     btnShare.addEventListener("click", shareToWhatsApp);
   }
 
-  // UX: click en el canvas para un burst extra cuando estás en final
   document.addEventListener("click", (e) => {
     if(screens.final.classList.contains("is-active")){
       window.Fireworks.burst(e.clientX, e.clientY);
     }
   });
 
-  // Inicial
   show("intro");
 })();
