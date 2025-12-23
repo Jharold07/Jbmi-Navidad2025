@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Un regalo para ti 🎁🎄</title>
+  <meta name="theme-color" content="#0b3d2e" />
+  <link rel="icon" href="assets/icons/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <canvas id="fx" class="fx" aria-hidden="true"></canvas>
+
+  <main class="app" role="main">
+
+    <section id="screen-intro" class="screen is-active" aria-label="Pantalla de inicio">
+      <div class="card">
+        <p class="badge">🎄 Sorpresa para la mejor novia</p>
+        <h1 class="title">Tengo un pequeño detallito para ti</h1>
+        <p class="subtitle">
+          Ábrelo y mira lo que preparé para ti.
+        </p>
+
+        <div class="cta">
+          <button id="btnStart" class="btn btn-primary" type="button">
+            Abrir regalo 🎁
+          </button>
+          <button id="btnMusic" class="btn btn-ghost" type="button" aria-pressed="false">
+            Activar música 🔊
+          </button>
+        </div>
+
+        <p class="hint">Tip: Si estás en celular, ponlo en pantalla completa 😉</p>
+      </div>
+    </section>
+
+    <section id="screen-gift" class="screen" aria-label="Pantalla del regalo">
+      <div class="card">
+        <p class="badge">🎁 Paso 1</p>
+        <h2 class="title h2">Toca el regalo</h2>
+        <p class="subtitle">Cuando lo abras… pasa la magia.</p>
+
+        <div class="gift-wrap">
+          <button id="giftBtn" class="gift gift-icon" type="button" aria-label="Abrir regalo">
+            <img id="giftImg" src="assets/images/gift-icon.png" alt="Regalo" />
+          </button>
+
+        </div>
+
+        <div class="cta">
+          <button id="btnBack" class="btn btn-ghost" type="button">Volver</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-final" class="screen" aria-label="Mensaje final">
+      <div class="card">
+        
+        <div id="shareCard" class="share-card">
+          <p class="badge">✨ ¡Feliz Navidad!</p>
+          <h2 class="title h2">A la mejor novia del mundo ❤️</h2>
+          <p id="finalMsg" class="message">Esta Navidad quiero decirte que soy muy feliz de tenerte a mi lado. Tu eres el regalo más bonito que la vida
+          me dio, y cada día contigo hace que todo tenga más sentido. Gracias por existir y por ser tú. Te amo muucho. ❤️🎄✨</p>
+        </div>
+        <hidden>Atte: Jbmi</hidden>
+
+        <div class="cta">
+          <button id="btnReplay" class="btn btn-primary" type="button">Repetir 🎆</button>
+          <!-- <button id="btnShare" class="btn btn-ghost" type="button">Compartir</button> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="audioOpen" preload="auto">
+    <source src="assets/audio/open-gift.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audioMusic" preload="auto" loop>
+    <source src="assets/audio/christmas-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script src="js/fireworks.js"></script>
+  <script src="js/giftAnimation.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</body>
+
+</html>

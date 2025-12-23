@@ -1,0 +1,39 @@
+@keyframes breathe{
+  0%,100%{ transform: scale(1); opacity: .65; }
+  50%{ transform: scale(1.02); opacity: .9; }
+}
+
+/* Editor */
+.editor{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.hidden{ display:none; }
+
+.label{
+  display:block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,.88);
+}
+
+.textarea{
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  outline: none;
+}
+
+.textarea:focus{
+  border-color: rgba(249,168,37,.55);
+  box-shadow: 0 0 0 3px rgba(249,168,37,.18);
+}

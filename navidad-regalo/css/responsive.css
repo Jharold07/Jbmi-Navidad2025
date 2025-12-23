@@ -1,0 +1,16 @@
+@media (max-width: 520px){
+  .card{ padding: 18px; border-radius: 18px; }
+  .cta{ gap: 10px; }
+  .btn{ width: 100%; justify-content: center; }
+}
+
+@media (min-width: 900px){
+  .card{ padding: 34px; }
+}
+
+@media (max-width: 520px){
+  .card{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

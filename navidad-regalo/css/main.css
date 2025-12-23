@@ -1,0 +1,193 @@
+html, body{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(249,168,37,.22), transparent 50%),
+              radial-gradient(1200px 800px at 80% 40%, rgba(198,40,40,.22), transparent 55%),
+              linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.bg{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255,255,255,.22), transparent 14%),
+    radial-gradient(circle at 85% 30%, rgba(255,255,255,.14), transparent 12%),
+    radial-gradient(circle at 20% 85%, rgba(255,255,255,.16), transparent 12%),
+    radial-gradient(circle at 80% 85%, rgba(255,255,255,.10), transparent 10%);
+  filter: blur(1px);
+}
+
+.fx{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;             
+  pointer-events: none;   
+}
+
+
+.app{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.screen{ display:none; width: min(860px, 100%); }
+.screen.is-active{ display:block; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+  backdrop-filter: blur(14px);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(249,168,37,.14);
+  border: 1px solid rgba(249,168,37,.25);
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+  font-size: 13px;
+  margin: 0 0 14px;
+}
+
+.title{
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  font-size: clamp(28px, 4.5vw, 48px);
+}
+
+.title.h2{
+  font-size: clamp(24px, 4vw, 40px);
+}
+
+.subtitle{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.5;
+}
+
+.message{
+  margin: 10px 0 0;
+  font-size: clamp(15px, 2.5vw, 18px);
+  line-height: 1.6;
+  color: rgba(255,255,255,.9);
+}
+
+.cta{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn{
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+  user-select: none;
+}
+
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn:focus{ outline: 2px solid rgba(249,168,37,.45); outline-offset: 2px; }
+
+.btn-primary{
+  background: linear-gradient(135deg, rgba(198,40,40,.95), rgba(249,168,37,.92));
+  color: var(--white);
+  border-color: rgba(255,255,255,.12);
+}
+
+.btn-primary:hover{ filter: brightness(1.05); }
+
+.btn-ghost{
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.92);
+  border-color: rgba(255,255,255,.14);
+}
+
+.btn-ghost:hover{ background: rgba(255,255,255,.10); }
+
+.hint{
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,.62);
+}
+/* Gift icon (simple & responsive) */
+.card { overflow: hidden; }
+
+.gift-wrap{
+  display:grid;
+  place-items:center;
+  width:100%;
+  margin: 14px 0 6px;
+}
+
+.gift.gift-icon{
+  width: min(260px, 70vw);
+  max-width: 320px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 auto;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.28));
+  transform: translateZ(0);
+}
+
+.gift.gift-icon img{
+  display:block;
+  width:100%;
+  height:auto;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
+
+
+/* Gift (mejor responsive) */
+.card{
+  overflow: hidden; /* evita que se salga visualmente */
+}
+
+.gift-wrap{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin: 14px 0 6px;
+}
+
+.gift{
+  width: min(260px, 72vw);  /* más pequeño en celular */
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+/* Ajuste fino para pantallas pequeñas */
+@media (max-width: 420px){
+  .gift{
+    width: min(220px, 68vw);
+  }
+}
+
